@@ -1,0 +1,70 @@
+.uk-card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    /* Add a smooth transition */
+    height: 400px;
+    /* Adjust the height of the card */
+}
+
+.uk-card-media-top {
+    height: 40%;
+    /* Set the height of the image container */
+    overflow: hidden;
+}
+
+.uk-card-media-top img {
+    width: 100%;
+    /* Ensure the image spans the width of the container */
+    height: 100%;
+    /* Maintain the aspect ratio */
+    object-fit: cover;
+    /* Maintain image aspect ratio and fill container */
+}
+
+.uk-card-body {
+    height: 60%;
+    /* Adjust the height of the card body */
+    overflow: hidden;
+    padding: 10px;
+    /* Add padding for content */
+}
+
+.uk-card-body p {
+    font-size: 16px;
+    /* Adjust the font size of the paragraph content */
+    line-height: 1.6;
+    /* Set line height for better readability */
+    font-weight: 500;
+}
+
+.align-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.odd-card {
+    background-color: #ff9999;
+    /* Color for odd cards */
+}
+
+.even-card {
+    background-color: #99ff99;
+    /* Color for even cards */
+}
+
+.uk-card-header {
+    color: white;
+    /* Header text color */
+    padding: 10px;
+}
+
+/* Hover effect */
+.uk-card:hover {
+    transform: scale(1.05);
+    /* Increase the size of the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Adjust box-shadow on hover */
+}

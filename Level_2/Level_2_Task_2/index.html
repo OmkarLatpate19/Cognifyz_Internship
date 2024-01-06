@@ -1,0 +1,96 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Website Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="images/logo.png" class="logo">
+            <nav>
+                <ul id="menuList">
+                    <li><a href="">Game Controllers</a></li>
+                    <li><a href="">VR Accessories</a></li>
+                    <li><a href="">Media Remotes</a></li>
+                    <li><a href="">Others</a></li>
+                </ul>
+            </nav>
+            <img src="images/menu.png" class="menu-icon" onclick="togglemenu()">
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <h2>PS4<br>Dualshock 4</h2>
+                <h3>Wireless Controller for Playstation 4</h3>
+                <p>(Compatible/generic)</p>
+                <h4>$32.50</h4>
+                <button type="button">Buy Now <img src="images/arrow.png"></button>
+            </div>
+            <div class="col-2">
+                <img src="images/controller.png" class="controller">
+                <div class="color-box"></div>
+                <div class="add-btn">
+                    <img src="images/add.png">
+                    <p><small>Add to Cart</small></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paragraph about the gaming controller -->
+        <div class="controller-info">
+            <p>The PS4 Dualshock 4 stands as a pinnacle of gaming control, offering a wireless and versatile experience tailored for the PlayStation 4 ecosystem. Engineered for precision and comfort, this controller brings gameplay to life with its responsive design and ergonomic build. Compatible across a range of titles, its adaptability caters to diverse gaming preferences. Priced at $32.50, this gaming gem elevates the gaming experience to new heights.</p>
+        </div>
+
+        <div class="container-form">
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="social-links">
+            <img src="images/fb.png">
+            <img src="images/tw.png">
+            <img src="images/ig.png">
+        </div>
+    </div>
+    <script>
+        var menuList = document.getElementById("menuList");
+
+        menuList.style.maxHeight = "0px";
+
+        function togglemenu() {
+
+            if (menuList.style.maxHeight == "0px") {
+                menuList.style.maxHeight = "130px";
+            }
+            else {
+                menuList.style.maxHeight = "0px";
+            }
+        }
+    </script>
+</body>
+
+</html>
