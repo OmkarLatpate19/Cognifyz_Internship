@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="full-img" id="fullImgBox">
+        <img src="images/img1.jpg" id="fullImg">
+        <span onclick="closeFullImg()">X</span>
+    </div>
+    <h1>Image Gallery</h1>
+    <div class="img-gallery">
+        <img src="images/img1.jpg" onclick="openFullImg(this.src)">
+        <img src="images/img2.jpg" onclick="openFullImg(this.src)">
+        <img src="images/img3.jpg" onclick="openFullImg(this.src)">
+        <img src="images/img4.jpg" onclick="openFullImg(this.src)">
+        <img src="images/img5.jpg" onclick="openFullImg(this.src)">
+        <img src="images/img6.jpg" onclick="openFullImg(this.src)">
+        <img src="images/img7.jpg" onclick="openFullImg(this.src)">
+        <img src="images/img8.jpg" onclick="openFullImg(this.src)">
+        <img src="images/img9.webp" onclick="openFullImg(this.src)">
+        <img src="images/img10.webp" onclick="openFullImg(this.src)">
+        <img src="images/img11.jpeg" onclick="openFullImg(this.src)">
+        <img src="images/img12.jpeg" onclick="openFullImg(this.src)">
+    </div>
+    <div class="slideshow-controls">
+        <div class="slideshow-btn" id="startBtn" onclick="startSlideshow()">Start Slideshow</div>
+        <div class="slideshow-btn" id="stopBtn" onclick="stopSlideshow()" style="display: none;">Stop Slideshow</div>
+    </div>
+    <div class="slideshow-arrows">
+        <span class="arrow left" onclick="prevImage()">&#9665;</span>
+        <span class="arrow right" onclick="nextImage()">&#9655;</span>
+    </div>
+    <script>
+        var fullImgBox = document.getElementById("fullImgBox");
+        var fullImg = document.getElementById("fullImg");
+        var currentIndex = 0;
+        var images = document.querySelectorAll('.img-gallery img');
+        var slideshowInterval;
+
+        function openFullImg(pic) {
+            closeFullImg(); // Close any currently open image before opening a new one
+            fullImgBox.style.display = "flex";
+            fullImg.src = pic;
+        }
+
+        function closeFullImg() {
+            fullImgBox.style.display = "none";
+        }
+
+        function startSlideshow() {
+            document.getElementById("startBtn").style.display = "none";
+            document.getElementById("stopBtn").style.display = "inline-block";
+            slideshowInterval = setInterval(nextImage, 3000); // Change image every 3 seconds
+        }
+
+        function stopSlideshow() {
+            document.getElementById("startBtn").style.display = "inline-block";
+            document.getElementById("stopBtn").style.display = "none";
+            clearInterval(slideshowInterval);
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            openFullImg(images[currentIndex].src);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            openFullImg(images[currentIndex].src);
+        }
+    </script>
+</body>
+
+</html>
